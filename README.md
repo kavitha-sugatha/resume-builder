@@ -80,3 +80,14 @@ The PDF export uses jsPDF and includes the selected profile photo when the uploa
 - This is a frontend-only application.
 - The preview is intentionally styled to match the reference resume layout closely.
 - The repository is configured to push to the `kavitha-sugatha` GitHub SSH remote.
+
+## Deploy to GitHub Pages
+
+This project is already configured for GitHub Pages deployment using GitHub Actions.
+
+1. Push changes to the `main` branch.
+2. In the GitHub repository, open `Settings` > `Pages`.
+3. Set the source to `GitHub Actions`.
+4. Let the workflow in `.github/workflows/deploy.yml` build the app and publish the `dist` folder.
+
+The Vite build base is set to `/resume-builder/`, which matches the repository name so asset paths work correctly on Pages.
