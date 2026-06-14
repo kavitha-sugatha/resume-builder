@@ -31,16 +31,37 @@ const ensureRoom = (doc: jsPDF, y: number, needed = 12) => {
 };
 
 export const downloadResumePdf = (data: ResumeData) => {
-  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
-  let y = margin;
+  return downloadResumePdfAsync(data);
+};
 
-  if (data.profilePhotoUrl.startsWith('data:image/')) {
+const addProfileImage = async (doc: jsPDF, data: ResumeData) => {
+  const { profilePhotoUrl } = data;
+
+  if (profilePhotoUrl.startsWith('data:image/')) {
     try {
-      doc.addImage(data.profilePhotoUrl, 'JPEG', 150, margin - 2, 30, 30);
+      doc.addImage(profilePhotoUrl, 'JPEG', 150, margin - 2, 30, 30);
     } catch {
       // Ignore image export failures and continue with the text resume.
     }
+    return;
   }
+
+  if (profilePhotoUrl.endsWith('.svg')) {
+    try {
+      const response = await fetch(profilePhotoUrl);
+      const svgText = await response.text();
+      await doc.addSvgAsImage(svgText, 150, margin - 2, 30, 30);
+    } catch {
+      // Ignore SVG export failures and continue with the text resume.
+    }
+  }
+};
+
+const downloadResumePdfAsync = async (data: ResumeData) => {
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+  let y = margin;
+
+  await addProfileImage(doc, data);
 
   doc.setTextColor(20, 32, 43);
   doc.setFont('helvetica', 'bold');

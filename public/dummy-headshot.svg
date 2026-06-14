@@ -1,0 +1,24 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="56" x2="448" y2="456" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D6E4F0"/>
+      <stop offset="1" stop-color="#B9D1E3"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(256 166) rotate(90) scale(160 160)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="64" fill="url(#bg)"/>
+  <circle cx="256" cy="182" r="160" fill="url(#halo)"/>
+  <circle cx="256" cy="200" r="84" fill="#F3C7A7"/>
+  <path d="M178 204C178 160 213 126 256 126C299 126 334 160 334 204C334 226 325 244 312 257C302 267 292 271 256 271C220 271 210 267 200 257C187 244 178 226 178 204Z" fill="#2F3A4A"/>
+  <path d="M202 182C213 161 233 149 256 149C279 149 299 161 310 182C316 193 320 208 320 223C320 249 307 267 289 279C277 287 265 290 256 290C247 290 235 287 223 279C205 267 192 249 192 223C192 208 196 193 202 182Z" fill="#F3C7A7"/>
+  <path d="M212 175C219 164 232 157 256 157C280 157 293 164 300 175C306 184 310 197 310 209C310 220 307 227 302 233C295 229 286 226 276 224C267 222 262 221 256 221C250 221 245 222 236 224C226 226 217 229 210 233C205 227 202 220 202 209C202 197 206 184 212 175Z" fill="#1F2937"/>
+  <ellipse cx="229" cy="209" rx="9" ry="6" fill="#1F2937"/>
+  <ellipse cx="283" cy="209" rx="9" ry="6" fill="#1F2937"/>
+  <path d="M237 229C242 233 249 236 256 236C263 236 270 233 275 229" stroke="#B56C57" stroke-width="5" stroke-linecap="round"/>
+  <path d="M178 392C187 346 220 318 256 318C292 318 325 346 334 392C305 412 271 423 256 423C241 423 207 412 178 392Z" fill="#415165"/>
+  <path d="M192 392C209 367 232 353 256 353C280 353 303 367 320 392" stroke="#D2E2EF" stroke-width="20" stroke-linecap="round" opacity="0.7"/>
+  <path d="M214 328C220 316 234 308 256 308C278 308 292 316 298 328" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity="0.45"/>
+</svg>
