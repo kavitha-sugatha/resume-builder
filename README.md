@@ -2,6 +2,10 @@
 
 A frontend-only resume builder built with React, Zustand, Material UI, and jsPDF.
 
+**Live app:** [kavitha-sugatha.github.io/resume-builder](https://kavitha-sugatha.github.io/resume-builder/)
+
+![Resume Builder Screenshot](resume.png)
+
 The app lets users enter their resume details, upload a profile photo, preview the result in a clean two-column layout, and download a PDF when they are ready.
 
 ## Features
