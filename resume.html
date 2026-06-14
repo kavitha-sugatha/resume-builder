@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kavitha Govindankutty Nair Sugatha - Resume</title>
+  <style>
+    :root {
+      --page-bg: #ffffff;
+      --paper: #ffffff;
+      --ink: #1d2329;
+      --muted: #5f6973;
+      --rule: #d2d9e0;
+      --accent: #08a9c6;
+      --accent-soft: #dff5f8;
+      --shadow: 0 18px 45px rgba(24, 39, 75, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--page-bg);
+      color: var(--ink);
+      font-family: "Aptos", "Avenir Next", "Segoe UI", sans-serif;
+    }
+
+    body {
+      padding: 28px;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--paper);
+      border-radius: 0;
+      border: 1px solid rgba(29, 35, 41, 0.12);
+      box-shadow: 0 10px 28px rgba(24, 39, 75, 0.08);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .top-accent {
+      height: 16px;
+      background: linear-gradient(90deg, var(--accent) 0%, #17b6d0 45%, #0f9db9 100%);
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(230px, 0.9fr);
+      gap: 20px;
+      padding: 20px 22px 24px;
+    }
+
+    .content > section:first-child {
+      padding-top: 0;
+    }
+
+    .name {
+      margin: 0 0 8px;
+      font-size: 2.5rem;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .title-line {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.45;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section {
+      margin: 0 0 18px;
+      padding-top: 0;
+    }
+
+    .section h2 {
+      margin: 0 0 8px;
+      font-size: 0.93rem;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
+
+    .section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 108px;
+      height: 3px;
+      background: var(--accent-soft);
+    }
+
+    .summary {
+      color: #3a444d;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .job {
+      margin: 0 0 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(210, 217, 224, 0.72);
+    }
+
+    .page-break-after {
+      break-after: page;
+      page-break-after: always;
+    }
+
+    .job:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .job-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px 14px;
+      margin-bottom: 4px;
+    }
+
+    .role {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 6px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .role-title {
+      font: inherit;
+      color: inherit;
+    }
+
+    .role-company {
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-style: italic;
+      color: #58656f;
+    }
+
+    .role-company::before {
+      content: "at ";
+      margin-right: 4px;
+      font-style: normal;
+      font-weight: 700;
+      color: #8a97a1;
+    }
+
+    .company {
+      margin: 0;
+      font-size: 0.88rem;
+      font-style: italic;
+      color: #33404a;
+      font-weight: 600;
+    }
+
+    .dates {
+      color: #51606b;
+      font-size: 0.84rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .location {
+      margin: 2px 0 6px;
+      color: #4f5b64;
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: #3e4952;
+      font-size: 0.89rem;
+      line-height: 1.45;
+    }
+
+    .bullets li {
+      margin: 0 0 6px;
+    }
+
+    .sidebar {
+      padding-top: 4px;
+    }
+
+    .photo-card {
+      border-radius: 2px;
+      overflow: hidden;
+      margin: 0 0 18px;
+      background: #f4f7f9;
+      border: 1px solid rgba(29, 35, 41, 0.09);
+    }
+
+    .photo-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .sidebar-block {
+      margin: 0 0 18px;
+    }
+
+    .sidebar-block h3 {
+      margin: 0 0 8px;
+      font-size: 0.94rem;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 800;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
+
+    .sidebar-block h3::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 96px;
+      height: 3px;
+      background: var(--accent-soft);
+    }
+
+    .contact-list, .skill-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      color: #344049;
+      font-size: 0.88rem;
+      line-height: 1.42;
+    }
+
+    .contact-list li {
+      margin-bottom: 6px;
+      word-break: break-word;
+    }
+
+    .contact-list a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .skills-group {
+      margin-bottom: 12px;
+    }
+
+    .skills-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-group h4 {
+      margin: 0 0 4px;
+      font-size: 0.84rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .label {
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .skill-list li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 6px;
+    }
+
+    .skill-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.58em;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .education-item {
+      margin: 0 0 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(210, 217, 224, 0.72);
+    }
+
+    .education-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .education-year {
+      display: block;
+      margin: 0 0 4px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #51606b;
+    }
+
+    .education-title {
+      margin: 0;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .education-school {
+      margin: 2px 0 0;
+      font-size: 0.88rem;
+      color: #3f4a54;
+      font-style: italic;
+    }
+
+    .small-note {
+      margin: 0;
+      color: #4e5962;
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 14px;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .name {
+        font-size: 1.9rem;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 0.04in;
+      }
+
+      body {
+        background: #fff;
+        padding: 0;
+        zoom: 0.73;
+      }
+
+      html {
+        background: #fff;
+      }
+
+      .page {
+        max-width: none;
+        border-radius: 0;
+        box-shadow: none;
+        border: 0;
+        background: #fff;
+      }
+
+      .top-accent {
+        display: block;
+        height: 8px;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: minmax(0, 1.6fr) minmax(230px, 0.9fr);
+        padding: 5px 6px 6px;
+        gap: 5px;
+      }
+
+      .content > section:first-child {
+        padding-top: 0;
+      }
+
+      .page-break-after {
+        break-after: page;
+        page-break-after: always;
+      }
+
+      .top-accent {
+        height: 8px;
+      }
+
+      .name {
+        font-size: 1.68rem;
+        margin-bottom: 1px;
+      }
+
+      .title-line {
+        margin-bottom: 4px;
+        padding-bottom: 4px;
+        font-size: 0.76rem;
+        line-height: 1.12;
+      }
+
+      .section {
+        margin-bottom: 4px;
+      }
+
+      .section h2 {
+        margin-bottom: 1px;
+        padding-bottom: 2px;
+      }
+
+      .summary {
+        font-size: 0.74rem;
+        line-height: 1.12;
+      }
+
+      .job {
+        margin-bottom: 4px;
+        padding-bottom: 5px;
+      }
+
+      .job-head {
+        margin-bottom: 1px;
+        gap: 2px 4px;
+      }
+
+      .role {
+        font-size: 0.8rem;
+      }
+
+      .company,
+      .dates,
+      .location,
+      .education-year,
+      .education-title,
+      .education-school,
+      .small-note,
+      .contact-list,
+      .skill-list {
+        font-size: 0.7rem;
+      }
+
+      .bullets {
+        font-size: 0.7rem;
+        line-height: 1.08;
+        padding-left: 12px;
+      }
+
+      .bullets li {
+        margin-bottom: 0;
+      }
+
+      .sidebar {
+        padding-top: 0;
+      }
+
+      .photo-card,
+      .sidebar-block,
+      .skills-group,
+      .education-item {
+        margin-bottom: 3px;
+      }
+
+      .sidebar-block h3,
+      .skills-group h4 {
+        margin-bottom: 0;
+        padding-bottom: 2px;
+      }
+
+      .contact-list li,
+      .skill-list li {
+        margin-bottom: 0;
+      }
+
+      .photo-card {
+        margin-bottom: 5px;
+        max-width: 84px;
+      }
+
+      .photo-card img {
+        aspect-ratio: 3 / 4;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="top-accent"></div>
+    <div class="content">
+      <section>
+        <section class="section">
+          <h2>Summary</h2>
+          <p class="summary">Versatile professional with experience across software development, teaching, and customer service. Combines mobile app development skills, classroom leadership, and strong client support with a dependable, detail-oriented work style. Known for adaptability, clear communication, and contributing effectively in fast-paced, people-focused environments.</p>
+        </section>
+
+        <section class="section">
+          <h2>Experience</h2>
+
+          <article class="job">
+            <div class="job-head">
+              <p class="role"><span class="role-title">Software Developer</span><span class="role-company">UST Global</span></p>
+              <span class="dates">Mar 2016 - Apr 2018</span>
+            </div>
+            <p class="location">Trivandrum, Kerala, India</p>
+            <ul class="bullets">
+              <li>Built cross-platform mobile applications using AngularJS and RESTful API integrations.</li>
+              <li>Developed responsive, modular code that improved maintainability and scalability across projects.</li>
+              <li>Contributed to QA testing, technical documentation, and code reviews to improve release quality.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <p class="role"><span class="role-title">System Engineer / Software Developer</span><span class="role-company">Schogini Systems Pvt Ltd</span></p>
+              <span class="dates">May 2010 - Jul 2012</span>
+            </div>
+            <p class="location">Trivandrum, Kerala, India</p>
+            <ul class="bullets">
+              <li>Designed interactive educational applications for pre-K and elementary learners.</li>
+              <li>Built mobile apps using Xcode, Android platforms, and Corona SDK (Lua).</li>
+              <li>Collaborated with cross-functional teams to deliver secure, engaging, high-performing learning tools.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <p class="role"><span class="role-title">Android Developer</span><span class="role-company">Zayan Infotech Pvt Ltd</span></p>
+              <span class="dates">Aug 2012 - May 2013</span>
+            </div>
+            <p class="location">Kerala, India</p>
+            <ul class="bullets">
+              <li>Contributed to Android application development, debugging, and testing.</li>
+              <li>Supported UI implementation and feature enhancements for mobile app releases.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <p class="role"><span class="role-title">Cashier</span><span class="role-company">Home Depot</span></p>
+              <span class="dates">Mar 2026 - Apr 2026</span>
+            </div>
+            <p class="location">Austin, Texas</p>
+            <ul class="bullets">
+              <li>Delivered accurate customer transactions and cash handling in a fast-paced retail environment.</li>
+              <li>Supported shoppers efficiently during peak periods while maintaining accuracy, speed, and a positive customer experience.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <p class="role"><span class="role-title">Head Cashier</span><span class="role-company">Home Depot</span></p>
+              <span class="dates">Jun 2026 - Present</span>
+            </div>
+            <p class="location">Austin, Texas</p>
+            <ul class="bullets">
+              <li>Delivered accurate customer transactions and cash handling in a fast-paced retail environment.</li>
+              <li>Supported shoppers efficiently during peak periods while maintaining accuracy, speed, and a positive customer experience.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <p class="role"><span class="role-title">Substitute Teacher (Part-time)</span><span class="role-company">Nyos Charter School</span></p>
+              <span class="dates">2025 - Present</span>
+            </div>
+            <p class="location">Austin, Texas</p>
+            <ul class="bullets">
+              <li>Facilitated classroom routines and lesson plans across diverse student groups, ensuring continuity during teacher absences.</li>
+              <li>Encouraged student engagement, critical thinking, and structured problem-solving during instructional periods.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <p class="role"><span class="role-title">Assistant Teacher</span><span class="role-company">Nest at Anderson Mill</span></p>
+              <span class="dates">Apr 2025</span>
+            </div>
+            <p class="location">Austin, Texas</p>
+            <ul class="bullets">
+              <li>Supported lead teachers in delivering lessons and maintaining a positive, organized learning environment for young children.</li>
+              <li>Adapted to individual student needs with patience and creativity to keep learners engaged and motivated.</li>
+            </ul>
+          </article>
+
+        </section>
+
+      </section>
+
+      <aside class="sidebar">
+        <div class="photo-card">
+          <img alt="Professional headshot" src="profile.jpg" />
+        </div>
+
+        <section class="sidebar-block">
+          <h3>Contact</h3>
+          <ul class="contact-list">
+            <li><span class="label">Address:</span> Austin, Texas</li>
+            <li><span class="label">Phone:</span> <a href="tel:+15123637451">(512) 363-7451</a></li>
+            <li><span class="label">Email:</span> <a href="mailto:kavitha.sugatha@gmail.com">kavitha.sugatha@gmail.com</a></li>
+            <li><span class="label">LinkedIn:</span> <a href="https://linkedin.com/in/kavitha-vipin-3a2473351/">linkedin.com/in/kavitha-vipin-3a2473351/</a></li>
+            <li><span class="label">Medium:</span> <a href="https://medium.com/@kavitha.sugatha">medium.com/@kavitha.sugatha</a></li>
+          </ul>
+        </section>
+
+        <section class="sidebar-block">
+          <h3>Skills</h3>
+          <div class="skills-group">
+            <h4>Technical</h4>
+            <ul class="skill-list">
+              <li>Mobile application development</li>
+              <li>AngularJS, Java, Kotlin</li>
+              <li>Xcode, Corona SDK (Lua)</li>
+              <li>HTML, CSS, JavaScript</li>
+              <li>RESTful API integration</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <h4>Collaboration & Support</h4>
+            <ul class="skill-list">
+              <li>Lesson delivery and classroom management</li>
+              <li>Student mentorship and engagement</li>
+              <li>Client relations and teamwork</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <h4>Tools & Languages</h4>
+            <ul class="skill-list">
+              <li>MS Excel, MS Word, MS PowerPoint</li>
+              <li>English, Malayalam, Hindi, Tamil</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="sidebar-block">
+          <h3>Education</h3>
+          <div class="education-item">
+            <span class="education-year">2006 – 2010</span>
+            <p class="education-title">Bachelor of Engineering (B.E.)</p>
+            <p class="education-school">NarayanaGuru College of Engineering – Anna University</p>
+            <p class="small-note">Kanyakumari, Tamil Nadu, India</p>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
