@@ -1,97 +1,61 @@
 # Resume Builder
 
-A frontend-only resume builder built with React, Zustand, Material UI, and jsPDF.
+A frontend-only resume builder built with React, Zustand, Material UI, and jsPDF. Enter your details, preview the result in a clean two-column layout, and download a PDF when you're ready.
 
-**Live app:** [kavitha-sugatha.github.io/resume-builder](https://kavitha-sugatha.github.io/resume-builder/)
+<a href="https://kavitha-sugatha.github.io/resume-builder/" target="_blank"><strong>Open Live App ↗</strong></a>
 
 ![Resume Builder Screenshot](resume.png)
-
-The app lets users enter their resume details, upload a profile photo, preview the result in a clean two-column layout, and download a PDF when they are ready.
 
 ## Features
 
 - Live resume editor for personal details, skills, work experience, and education
 - Profile photo upload with immediate preview update
+- Dark / light mode toggle
 - Resume preview that mirrors the reference resume layout
-- PDF export using jsPDF
+- PDF export using jsPDF (supports JPEG and SVG profile images)
 - Responsive interface that works on desktop and mobile
-- Simple, functional UI built with Material UI
 
 ## Tech Stack
 
-- React 18
-- Zustand for state management
-- Material UI for the interface
-- jsPDF for PDF generation
-- Vite for local development and production builds
+| Technology   | Purpose            |
+| ------------ | ------------------ |
+| React 18     | UI framework       |
+| Zustand      | State management   |
+| Material UI  | Component library  |
+| jsPDF        | PDF generation     |
+| Vite         | Dev server & build |
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18 or newer
-- npm
-
-### Install dependencies
+**Prerequisites:** Node.js 18 or newer, npm
 
 ```bash
 npm install
-```
-
-### Start the development server
-
-```bash
 npm run dev
 ```
 
-If Vite chooses a different port because one is already in use, open the URL it prints in the terminal.
-
-### Build for production
+If Vite picks a different port, open the URL it prints in the terminal.
 
 ```bash
-npm run build
+npm run build    # Type-check and build for production
+npm run preview  # Preview the production build locally
 ```
-
-### Preview the production build
-
-```bash
-npm run preview
-```
-
-## Scripts
-
-- `npm run dev` - Start the Vite dev server
-- `npm run build` - Type-check and build the app
-- `npm run preview` - Preview the production build locally
 
 ## How It Works
 
-The app keeps all resume data in a Zustand store. The editor updates that store in real time, and the preview reads from the same data so changes appear immediately.
-
-The PDF export uses jsPDF and includes the selected profile photo when the uploaded image is available as a data URL.
+All resume data lives in a Zustand store. The editor updates the store in real time, and the preview reads from the same data so changes appear immediately. PDF export uses jsPDF and includes the profile photo when available.
 
 ## Project Structure
 
-- `src/App.tsx` - Main editor and resume preview UI
-- `src/store.ts` - Zustand store and default resume data
-- `src/pdf.ts` - PDF export logic
-- `src/types.ts` - Shared TypeScript types
-- `src/styles.css` - Global and preview styling
-- `public/profile.jpg` - Default profile photo used by the preview
+```
+src/
+├── App.tsx       Main editor and resume preview UI
+├── store.ts      Zustand store and default resume data
+├── pdf.ts        PDF export logic
+├── types.ts      Shared TypeScript types
+└── styles.css    Global and preview styling
+```
 
-## Notes
+## Deployment
 
-- This is a frontend-only application.
-- The preview is intentionally styled to match the reference resume layout closely.
-- The repository is configured to push to the `kavitha-sugatha` GitHub SSH remote.
-
-## Deploy to GitHub Pages
-
-This project is already configured for GitHub Pages deployment using GitHub Actions.
-
-1. Push changes to the `main` branch.
-2. In the GitHub repository, open `Settings` > `Pages`.
-3. Set the source to `GitHub Actions`.
-4. Let the workflow in `.github/workflows/deploy.yml` build the app and publish the `dist` folder.
-
-The Vite build base is set to `/resume-builder/`, which matches the repository name so asset paths work correctly on Pages.
+The repo is configured for GitHub Pages via GitHub Actions. Push to `main` and the workflow in `.github/workflows/deploy.yml` builds and publishes the `dist` folder. The Vite base is set to `/resume-builder/` so asset paths resolve correctly.
