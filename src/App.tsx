@@ -510,9 +510,6 @@ export default function App() {
                     <Typography variant="h4" sx={{ fontWeight: 800, lineHeight: 1.06, fontSize: { xs: '1.9rem', md: '2.45rem' } }}>
                       Build your resume faster.
                     </Typography>
-                    <Typography variant="body1" color="text.secondary" sx={{ mt: 1, maxWidth: 620 }}>
-                      Edit on the left, preview on the right, export when ready.
-                    </Typography>
                   </Box>
                 </Stack>
 
